@@ -28,3 +28,18 @@
   .photo-strip>.photo-stack figure:first-child img,
   .photo-strip>.photo-stack figure:nth-child(2) img{display:block;width:100%;height:auto;max-height:none;object-fit:contain;background:transparent}
 }
+
+/* Natural aspect ratios: Reagan portrait beside two uncropped landscape photos. */
+@media(min-width:681px){
+  .photo-strip{grid-template-columns:minmax(0,47fr) minmax(0,53fr);gap:24px;align-items:start}
+  .photo-strip>.photo-stack{display:grid;height:auto;grid-template-rows:auto auto;gap:18px;align-content:start}
+  .photo-strip>.photo-stack figure{display:block;height:auto}
+  .photo-strip>figure:first-child img,
+  .photo-strip>.photo-stack figure:first-child img,
+  .photo-strip>.photo-stack figure:nth-child(2) img{display:block;width:100%;height:auto;min-height:0;max-height:none;aspect-ratio:auto;flex:none;object-fit:contain;object-position:center;background:transparent}
+}
+.photo-strip img{border:0;box-shadow:none;background:transparent}
+@media(max-width:680px){
+  .photo-strip>.photo-stack figure:first-child img,
+  .photo-strip>.photo-stack figure:nth-child(2) img{width:100%;height:auto;max-height:none;object-fit:contain;background:transparent}
+}
